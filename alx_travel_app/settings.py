@@ -75,7 +75,7 @@ WSGI_APPLICATION = "alx_travel_app.wsgi.application"
 # mariadb config
 DATABASES = {
     "default": {
-        "ENGINE": "mysql.connector.django",  # Works for MariaDB
+        "ENGINE": "django.db.backends.mysql",  # Works for MariaDB
         "NAME": env("DB_NAME", default="alxtravelapp_db"),
         "USER": env("DB_USER", default="root"),
         "PASSWORD": env("DB_PASSWORD"),
@@ -143,11 +143,11 @@ CORS_ALLOW_ALL_ORIGINS = True
 # settings.py
 
 # Celery Configuration
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//' # Default RabbitMQ URL
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
+CELERY_BROKER_URL = "amqp://guest:guest@localhost:5672//"  # Default RabbitMQ URL
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = "UTC"
 
 # Optional: Use Django ORM to store results
-CELERY_RESULT_BACKEND = 'django-db' 
+CELERY_RESULT_BACKEND = "django-db"
